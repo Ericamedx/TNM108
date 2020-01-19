@@ -20,7 +20,7 @@ warnings.filterwarnings('ignore')
 ## load csv data
 nRowsRead = None
 
-hotrev = pd.read_csv("Datafiniti_Hotel_Reviews_Jun19.csv", delimiter=',', nrows = nRowsRead)
+hotrev = pd.read_csv("/Users/emmaalgotsson/Documents/Kurser/TNM108-Maskin/Projekt/Datafiniti_Hotel_Reviews_Jun19.csv", delimiter=',', nrows = nRowsRead)
 
 ndarcity = (np.unique(hotrev['city']))
 ndarhotel = (np.unique(hotrev['name']))
