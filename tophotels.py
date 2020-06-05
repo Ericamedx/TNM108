@@ -30,9 +30,9 @@ lencity = len(ndarcity)
 lenhotel = len(ndarhotel)
 
 print('Number of distinct city = ',lencity)
-print('Number of distinct hotel = ',lenhotel,'\n')
+print('Number of distinct hotels = ',lenhotel,'\n')
 
-#-----------------------------------------------------------------
+# -----------------------------------------------------------------
 
 #City number of hotels
 city_numof_hotels = pd.DataFrame(columns=['City', 'NumofHotels'])
@@ -45,12 +45,12 @@ city_numof_hotels.to_csv('Derived_City_Numof_Hotels.csv')
 print('City with Maximum hotels:')
 print((city_numof_hotels['City'][city_numof_hotels['NumofHotels'] == max(city_numof_hotels['NumofHotels'])]),max(city_numof_hotels['NumofHotels']))
 
-#------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 #Hotel Avg Review
-hotels_list = pd.DataFrame(columns=['Hotel_Name','Avg_Review','Percentage'])
+hotels_list = pd.DataFrame(columns=['Hotel_Name','Avg_Review', 'Percentage'])
 
-for i in range(50):
+for i in range(1311):
     hotels_list.loc[i] = (ndarhotel[i],(np.mean(hotrev['reviews.rating'][hotrev['name'] == ndarhotel[i]])),((np.mean(hotrev['reviews.rating'][hotrev['name'] == ndarhotel[i]]))/5))
 
 hotels_list.to_csv('Derived_Hotel_List_Review.csv')
@@ -63,6 +63,6 @@ l = list(range(len(hotels_list['Hotel_Name'])))
 plt.xticks(l,hotels_list['Hotel_Name'],rotation = 'vertical')
 plt.bar(l,hotels_list['Avg_Review'],align='center')
 
-plt.show()
+#plt.show()
 
 
